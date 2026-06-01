@@ -1,5 +1,7 @@
 package com.delivery.model;
 import java.util.List;
+import jakarta.validation.constraints.NotBlank;
+
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -12,7 +14,7 @@ public class Categoria {
 	  @Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    private Long id;
-
+	  @NotBlank(message = "A descrição é obrigatória")
 	    private String descricao;
 
 	    @OneToMany(mappedBy = "categoria")

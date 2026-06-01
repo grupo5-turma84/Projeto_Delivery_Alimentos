@@ -1,6 +1,8 @@
 package com.delivery.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 import jakarta.persistence.*;
 
@@ -11,12 +13,13 @@ public class Produto {
 	 @Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    private Long id;
-
+	 @NotBlank(message = "O nome é obrigatório")
 	    private String nome;
-
+	 @NotBlank(message = "A descrição é obrigatória")
 	    private String descricao;
-
+	 @NotNull(message = "O preço é obrigatório")
 	    private Double preco;
+	 @NotNull(message = "As calorias são obrigatórias")
 
 	    private Integer calorias;
 
