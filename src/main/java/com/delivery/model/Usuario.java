@@ -28,7 +28,7 @@ public class Usuario {
     @NotBlank(message = "A senha é obrigatória")
     private String senha;
 
-    @OneToMany(mappedBy = "usuario")
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
     @JsonIgnoreProperties("usuario")
     private List<Produto> produtos;
 

@@ -17,9 +17,9 @@ public class Categoria {
 	  @NotBlank(message = "A descrição é obrigatória")
 	    private String descricao;
 
-	    @OneToMany(mappedBy = "categoria")
-	    @JsonIgnoreProperties("categoria")
-	    private List<Produto> produtos;
+	  @OneToMany(mappedBy = "categoria", cascade = CascadeType.REMOVE)
+	  @JsonIgnoreProperties("categoria")
+	  private List<Produto> produtos;
 
 	    public Long getId() {
 	        return id;
