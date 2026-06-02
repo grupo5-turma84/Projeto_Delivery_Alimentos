@@ -32,8 +32,18 @@ public class Produto {
 	    @JoinColumn(name = "categoria_id")
 	    @JsonIgnoreProperties("produtos")
 	    private Categoria categoria;
+	    
+	    private String foto;
 
-	    public Long getId() {
+	    public String getFoto() {
+			return foto;
+		}
+
+		public void setFoto(String foto) {
+			this.foto = foto;
+		}
+
+		public Long getId() {
 	        return id;
 	    }
 
